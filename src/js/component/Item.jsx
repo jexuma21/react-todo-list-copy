@@ -1,22 +1,28 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Item = (props) => {
+export const Item = ({toDo, list, addToList}) => {
 
-    const removeItem = () => {
-        // write function to remove item from 'list' array
+    const handleRemoveButton = () => {
+        handleaddToList(list.filter(item => item.id !== toDo.id))
     }
 
     return (
-        <div className="todoitem">
-
-        <p >{props.input}</p>
+    <div className="todoitem">
+        <p>{props.toDo.string}</p>
+        
         <button
-        // when user clicks button, the 'removeItem' function is called, and the item is removed from the array
-        onClick={() => {removeItem()}}
+        onClick={handleRemoveButton}
         >
         Delete
         </button>
-        </div>
+    </div>
 
     )
+}
+
+Item.prototypes = {
+    toDo: PropTypes.object,
+    list: PropTypes.array,
+    handleaddToList: PropTypes.func
 }
