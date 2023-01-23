@@ -5,7 +5,6 @@ import { Input } from "./Input.jsx";
 const Home = () => {
 	return (
 		<div className="center">
-			<h1>todos</h1>
 			<div className="container">
 				<Input className="input"/>
 			</div>

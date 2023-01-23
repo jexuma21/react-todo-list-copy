@@ -1,3 +1,0 @@
-const asyncFunction = async () => {
-    con
-}
